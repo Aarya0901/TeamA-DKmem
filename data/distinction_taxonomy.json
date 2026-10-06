@@ -1,0 +1,261 @@
+{
+  "taxonomy_version": "0.1",
+  "description": "Team B distinction taxonomy for cross-lingual false-consolidation probes. class_id values match the distinction.class enum in docs/schemas/pairwise_eval.schema.json. Each class lists one or more languages where the distinction is grammaticalized or lexicalized, the possible surface values, the coarse English gloss those values collapse to, and 2-3 minimal-pair items with a gold same_entity label for Tier 1 probe construction.",
+  "classes": [
+    {
+      "class_id": "kinship",
+      "name": "Kinship specificity",
+      "languages": [
+        {
+          "language": "hi",
+          "language_name": "Hindi / Hinglish",
+          "feature": "kin-relation-specific noun (marks parental line, generation, and gender)",
+          "possible_values": ["chachi", "mami", "bua", "mausi", "dadi", "nani"],
+          "english_gloss": "aunt / grandmother",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "meri chachi Pune mein rehti hai", "gloss": "user's aunt lives in Pune", "distinction_value": "chachi"},
+              "entry_b": {"utterance": "meri mausi Pune mein rehti hai", "gloss": "user's aunt lives in Pune", "distinction_value": "mausi"},
+              "same_entity_gold": false
+            },
+            {
+              "entry_a": {"utterance": "meri dadi Jaipur aa rahi hain", "gloss": "user's grandmother is coming to Jaipur", "distinction_value": "dadi"},
+              "entry_b": {"utterance": "meri nani Jaipur aa rahi hain", "gloss": "user's grandmother is coming to Jaipur", "distinction_value": "nani"},
+              "same_entity_gold": false
+            },
+            {
+              "entry_a": {"utterance": "meri bua ka phone aaya", "gloss": "user's aunt called", "distinction_value": "bua"},
+              "entry_b": {"utterance": "meri mami ka phone aaya", "gloss": "user's aunt called", "distinction_value": "mami"},
+              "same_entity_gold": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class_id": "honorific_register",
+      "name": "Honorific / register",
+      "languages": [
+        {
+          "language": "hi",
+          "language_name": "Hindi / Hinglish",
+          "feature": "second-person pronoun register",
+          "possible_values": ["tu", "tum", "aap"],
+          "english_gloss": "you",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "tu kal aa rahi hai?", "gloss": "are you coming tomorrow?", "distinction_value": "tu"},
+              "entry_b": {"utterance": "aap kal aa rahi hain?", "gloss": "are you coming tomorrow?", "distinction_value": "aap"},
+              "same_entity_gold": false,
+              "note": "tu marks an intimate/close addressee, aap a formal one; the two utterances plausibly address different people despite an identical English gloss."
+            },
+            {
+              "entry_a": {"utterance": "tum kaha ja rahe ho?", "gloss": "where are you going?", "distinction_value": "tum"},
+              "entry_b": {"utterance": "aap kaha ja rahe hain?", "gloss": "where are you going?", "distinction_value": "aap"},
+              "same_entity_gold": false,
+              "note": "tum (familiar) vs. aap (formal) plausibly address different people despite an identical English gloss."
+            }
+          ]
+        },
+        {
+          "language": "de",
+          "language_name": "German",
+          "feature": "second-person pronoun register (T-V distinction)",
+          "possible_values": ["du", "Sie"],
+          "english_gloss": "you",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "Wie geht es dir?", "gloss": "how are you?", "distinction_value": "du"},
+              "entry_b": {"utterance": "Wie geht es Ihnen?", "gloss": "how are you?", "distinction_value": "Sie"},
+              "same_entity_gold": false,
+              "note": "du addresses a close/informal relation, Sie a formal one; same gloss, plausibly different addressee."
+            },
+            {
+              "entry_a": {"utterance": "Kommst du morgen?", "gloss": "are you coming tomorrow?", "distinction_value": "du"},
+              "entry_b": {"utterance": "Kommen Sie morgen?", "gloss": "are you coming tomorrow?", "distinction_value": "Sie"},
+              "same_entity_gold": false,
+              "note": "same T-V contrast as above, second verb/context."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class_id": "name_variant",
+      "name": "Name-variant surface form",
+      "languages": [
+        {
+          "language": "hi",
+          "language_name": "Hindi / Hinglish",
+          "feature": "proper-noun script/transliteration/phonetic-spelling variant",
+          "possible_values": ["Priya", "प्रिया", "Preeyam"],
+          "english_gloss": "Priya",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "Priya aa rahi hai", "gloss": "Priya is coming", "distinction_value": "Priya"},
+              "entry_b": {"utterance": "प्रिया आ रही है", "gloss": "Priya is coming", "distinction_value": "प्रिया"},
+              "same_entity_gold": true,
+              "note": "same person, different script -- should merge; tests missed-consolidation risk, not false-consolidation risk."
+            },
+            {
+              "entry_a": {"utterance": "Priya office se aa rahi hai", "gloss": "Priya is coming from the office", "distinction_value": "Priya (office)"},
+              "entry_b": {"utterance": "Priya college se aa rahi hai", "gloss": "Priya is coming from college", "distinction_value": "Priya (college)"},
+              "same_entity_gold": false,
+              "note": "two different people who share the transliterated name Priya; the disambiguating context (office/college) is easy for an extractor to drop from the gloss."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class_id": "evidentiality",
+      "name": "Evidentiality / hearsay",
+      "languages": [
+        {
+          "language": "hi",
+          "language_name": "Hindi / Hinglish",
+          "feature": "lexical reportative marker (Hindi has no grammaticalized evidential suffix; reportative status is marked lexically)",
+          "possible_values": ["suna hai ki... (heard that...)", "maine dekha ki... (I saw that...)"],
+          "english_gloss": "[fact], simple past",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "suna hai wo Mumbai gaya", "gloss": "he went to Mumbai", "distinction_value": "reported/unconfirmed"},
+              "entry_b": {"utterance": "maine dekha wo Mumbai gaya", "gloss": "he went to Mumbai", "distinction_value": "witnessed/confirmed"},
+              "same_entity_gold": true,
+              "note": "same referent and event; evidential status (hearsay vs. witnessed) is dropped by the gloss, so a confident merge/supersession silently upgrades an unconfirmed report to a confirmed fact."
+            },
+            {
+              "entry_a": {"utterance": "kehte hain wo bimar hai", "gloss": "he is sick", "distinction_value": "reported/unconfirmed"},
+              "entry_b": {"utterance": "maine khud dekha wo bimar hai", "gloss": "he is sick", "distinction_value": "witnessed/confirmed"},
+              "same_entity_gold": true,
+              "note": "same referent and fact; reportative vs. first-hand marking is dropped by the gloss."
+            }
+          ]
+        },
+        {
+          "language": "tr",
+          "language_name": "Turkish",
+          "feature": "evidential past-tense suffix",
+          "possible_values": ["-dı/-di (direct/witnessed past)", "-mış/-miş (reported/inferred past)"],
+          "english_gloss": "[fact], simple past",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "Ali geldi", "gloss": "Ali arrived", "distinction_value": "-di (witnessed)"},
+              "entry_b": {"utterance": "Ali gelmiş", "gloss": "Ali arrived", "distinction_value": "-miş (reported)"},
+              "same_entity_gold": true,
+              "note": "same referent and event; the witnessed-vs-reported distinction is destroyed by the English gloss."
+            },
+            {
+              "entry_a": {"utterance": "Yağmur yağdı", "gloss": "it rained", "distinction_value": "-dı (witnessed)"},
+              "entry_b": {"utterance": "Yağmur yağmış", "gloss": "it rained", "distinction_value": "-mış (reported)"},
+              "same_entity_gold": true,
+              "note": "same event; witnessed-vs-reported evidentiality dropped by the gloss."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class_id": "classifier_measure",
+      "name": "Classifier / measure",
+      "languages": [
+        {
+          "language": "hi",
+          "language_name": "Hindi / Hinglish",
+          "feature": "measure/classifier word attached to a quantified noun",
+          "possible_values": ["tukda (piece)", "jorha/jode (pair/set)", "botal (bottle)", "gilaas (glass)"],
+          "english_gloss": "[quantity] of [noun], measure word dropped",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "do jode kapde diye", "gloss": "gave two [units of] clothes", "distinction_value": "jode (pair/set)"},
+              "entry_b": {"utterance": "do tukde kapda diya", "gloss": "gave two [units of] cloth", "distinction_value": "tukda (piece)"},
+              "same_entity_gold": false,
+              "note": "different quantity/material (two full outfits vs. two pieces of fabric); the gloss collapses both to the same 'two clothes' fact."
+            },
+            {
+              "entry_a": {"utterance": "ek botal doodh laaya", "gloss": "brought milk", "distinction_value": "botal (bottle)"},
+              "entry_b": {"utterance": "ek gilaas doodh laaya", "gloss": "brought milk", "distinction_value": "gilaas (glass)"},
+              "same_entity_gold": false,
+              "note": "different container/quantity of milk on two occasions; risks being treated as a duplicate or supersession of the same fact."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class_id": "politeness_relationship",
+      "name": "Politeness-encoded relationship",
+      "languages": [
+        {
+          "language": "hi",
+          "language_name": "Hindi / Hinglish",
+          "feature": "fictive-kin / honorific address term encoding relationship closeness",
+          "possible_values": ["bhaiya (respectful fictive brother)", "yaar (casual friend)"],
+          "english_gloss": "friend",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "bhaiya aaye the dukaan se", "gloss": "friend came from the shop", "distinction_value": "bhaiya"},
+              "entry_b": {"utterance": "yaar aaya tha party mein", "gloss": "friend came to the party", "distinction_value": "yaar"},
+              "same_entity_gold": false,
+              "note": "bhaiya (respectful, often for an elder acquaintance) and yaar (close peer) signal different relationship closeness; both gloss to 'friend'."
+            },
+            {
+              "entry_a": {"utterance": "bhaiya ne paisa diya", "gloss": "friend gave money", "distinction_value": "bhaiya"},
+              "entry_b": {"utterance": "yaar ne paisa diya", "gloss": "friend gave money", "distinction_value": "yaar"},
+              "same_entity_gold": false,
+              "note": "same relationship-closeness contrast as above, second scenario."
+            }
+          ]
+        },
+        {
+          "language": "ko",
+          "language_name": "Korean",
+          "feature": "speech-level verb ending, chosen based on relationship/social rank to the listener or referent",
+          "possible_values": ["banmal (informal speech level)", "jondaetmal (honorific speech level)"],
+          "english_gloss": "[my] friend came",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "친구가 왔어", "gloss": "[my] friend came", "distinction_value": "banmal (informal)"},
+              "entry_b": {"utterance": "친구분이 오셨어요", "gloss": "[my] friend came", "distinction_value": "jondaetmal (honorific)"},
+              "same_entity_gold": false,
+              "note": "the honorific register on the second utterance implies a more distant/respected relationship than the plain register on the first; both collapse to the same English gloss."
+            },
+            {
+              "entry_a": {"utterance": "친구가 도와줬어", "gloss": "[my] friend helped", "distinction_value": "banmal (informal)"},
+              "entry_b": {"utterance": "친구분이 도와주셨어요", "gloss": "[my] friend helped", "distinction_value": "jondaetmal (honorific)"},
+              "same_entity_gold": false,
+              "note": "same register contrast as above, second scenario."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class_id": "spatial_temporal_deixis",
+      "name": "Spatial / temporal deixis",
+      "languages": [
+        {
+          "language": "hi",
+          "language_name": "Hindi / Hinglish",
+          "feature": "deictic pronoun (proximal/distal) and deictic time adverb disambiguated only by verb tense",
+          "possible_values": ["yeh (this/near)", "woh (that/far)", "kal (yesterday, with past tense)", "kal (tomorrow, with future tense)"],
+          "english_gloss": "this/that; yesterday/tomorrow",
+          "minimal_pairs": [
+            {
+              "entry_a": {"utterance": "kal woh Pune gaya tha", "gloss": "he went to Pune yesterday", "distinction_value": "kal + past tense = yesterday"},
+              "entry_b": {"utterance": "kal woh Pune jayega", "gloss": "he will go to Pune tomorrow", "distinction_value": "kal + future tense = tomorrow"},
+              "same_entity_gold": false,
+              "note": "kal is temporally ambiguous without the verb tense; an extractor that normalizes 'kal' to a fixed date without reading tense can flip a past fact into a future one -- vivid temporal false consolidation."
+            },
+            {
+              "entry_a": {"utterance": "yeh ghar mera hai", "gloss": "this is my house", "distinction_value": "yeh (near)"},
+              "entry_b": {"utterance": "woh ghar mera hai", "gloss": "that is my house", "distinction_value": "woh (far)"},
+              "same_entity_gold": false,
+              "note": "proximal/distal deixis distinguishes two houses the user owns; the gloss drops which one is meant."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

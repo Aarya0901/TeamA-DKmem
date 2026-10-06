@@ -1,0 +1,383 @@
+{
+  "meta": {
+    "label": "Tier 1 v2, LLM-annotated, provisional",
+    "eval_contract": "docs/tier1_eval_contract.md",
+    "answer_key": "data/tier1/eval_input/teamB_answer_key.jsonl",
+    "scorer": "data/tier1/scripts/score_tier1_eval.js",
+    "gold_n_different": 98,
+    "gold_n_same": 75,
+    "gold_n_total": 173,
+    "generated_at": "2026-10-01",
+    "warning": "Not human gold. Do not present as a validated benchmark result."
+  },
+  "validation": {
+    "all_runs_pass_schema": true,
+    "all_runs_pass_gold_entity_id_check": true,
+    "all_runs_pass_entry_id_uniqueness": true,
+    "all_runs_pass_dataset_tier_check": true,
+    "all_runs_pass_run_id_strategy_match": true,
+    "errors": [],
+    "warnings": []
+  },
+  "strategies": {
+    "dk-mem-lexicon": {
+      "backbone": null,
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "overall": {
+        "FCR": {
+          "mean": 0.1326530612244898,
+          "sd": 0,
+          "n": 98,
+          "n_seeds": 3,
+          "per_seed": [
+            {
+              "seed": 0,
+              "numerator": 13,
+              "n": 98,
+              "rate": 0.1326530612244898
+            },
+            {
+              "seed": 1,
+              "numerator": 13,
+              "n": 98,
+              "rate": 0.1326530612244898
+            },
+            {
+              "seed": 2,
+              "numerator": 13,
+              "n": 98,
+              "rate": 0.1326530612244898
+            }
+          ]
+        },
+        "MCR": {
+          "mean": 0.8133333333333334,
+          "sd": 0,
+          "n": 75,
+          "n_seeds": 3,
+          "per_seed": [
+            {
+              "seed": 0,
+              "numerator": 61,
+              "n": 75,
+              "rate": 0.8133333333333334
+            },
+            {
+              "seed": 1,
+              "numerator": 61,
+              "n": 75,
+              "rate": 0.8133333333333334
+            },
+            {
+              "seed": 2,
+              "numerator": 61,
+              "n": 75,
+              "rate": 0.8133333333333334
+            }
+          ]
+        }
+      },
+      "per_run": {
+        "seed0": {
+          "run_id": "dk-mem-lexicon_seed0",
+          "records_total": 173,
+          "scored_cross_utterance": 173,
+          "ignored": {
+            "unknown_utterance": 0,
+            "cross_episode": 0,
+            "same_utterance": 0
+          },
+          "FCR": {
+            "numerator": 13,
+            "n": 98,
+            "rate": 0.1326530612244898
+          },
+          "MCR": {
+            "numerator": 61,
+            "n": 75,
+            "rate": 0.8133333333333334
+          },
+          "outcome_breakdown": {
+            "different": {
+              "merged": 13,
+              "compared_not_merged": 85,
+              "not_compared": 0,
+              "no_entry": 0
+            },
+            "same": {
+              "merged": 14,
+              "compared_not_merged": 61,
+              "not_compared": 0,
+              "no_entry": 0
+            }
+          }
+        },
+        "seed1": {
+          "run_id": "dk-mem-lexicon_seed1",
+          "records_total": 173,
+          "scored_cross_utterance": 173,
+          "ignored": {
+            "unknown_utterance": 0,
+            "cross_episode": 0,
+            "same_utterance": 0
+          },
+          "FCR": {
+            "numerator": 13,
+            "n": 98,
+            "rate": 0.1326530612244898
+          },
+          "MCR": {
+            "numerator": 61,
+            "n": 75,
+            "rate": 0.8133333333333334
+          },
+          "outcome_breakdown": {
+            "different": {
+              "merged": 13,
+              "compared_not_merged": 85,
+              "not_compared": 0,
+              "no_entry": 0
+            },
+            "same": {
+              "merged": 14,
+              "compared_not_merged": 61,
+              "not_compared": 0,
+              "no_entry": 0
+            }
+          }
+        },
+        "seed2": {
+          "run_id": "dk-mem-lexicon_seed2",
+          "records_total": 173,
+          "scored_cross_utterance": 173,
+          "ignored": {
+            "unknown_utterance": 0,
+            "cross_episode": 0,
+            "same_utterance": 0
+          },
+          "FCR": {
+            "numerator": 13,
+            "n": 98,
+            "rate": 0.1326530612244898
+          },
+          "MCR": {
+            "numerator": 61,
+            "n": 75,
+            "rate": 0.8133333333333334
+          },
+          "outcome_breakdown": {
+            "different": {
+              "merged": 13,
+              "compared_not_merged": 85,
+              "not_compared": 0,
+              "no_entry": 0
+            },
+            "same": {
+              "merged": 14,
+              "compared_not_merged": 61,
+              "not_compared": 0,
+              "no_entry": 0
+            }
+          }
+        }
+      },
+      "coverage": {
+        "episodes_expected": 173,
+        "episodes_comparable": 173,
+        "episodes_not_comparable": 0,
+        "note": "All 173 episodes produced cross-utterance records."
+      },
+      "seed_variance_observation": "All three seeds produce identical decisions. SD = 0 exactly. The three submitted run files are deterministically identical in their merge decisions."
+    },
+    "dk-mem-lexicon-llm": {
+      "backbone": "Qwen/Qwen2.5-3B-Instruct",
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "overall": {
+        "FCR": {
+          "mean": 0.05102040816326531,
+          "sd": 0,
+          "n": 98,
+          "n_seeds": 3,
+          "per_seed": [
+            {
+              "seed": 0,
+              "numerator": 5,
+              "n": 98,
+              "rate": 0.05102040816326531
+            },
+            {
+              "seed": 1,
+              "numerator": 5,
+              "n": 98,
+              "rate": 0.05102040816326531
+            },
+            {
+              "seed": 2,
+              "numerator": 5,
+              "n": 98,
+              "rate": 0.05102040816326531
+            }
+          ]
+        },
+        "MCR": {
+          "mean": 0.76,
+          "sd": 0,
+          "n": 75,
+          "n_seeds": 3,
+          "per_seed": [
+            {
+              "seed": 0,
+              "numerator": 57,
+              "n": 75,
+              "rate": 0.76
+            },
+            {
+              "seed": 1,
+              "numerator": 57,
+              "n": 75,
+              "rate": 0.76
+            },
+            {
+              "seed": 2,
+              "numerator": 57,
+              "n": 75,
+              "rate": 0.76
+            }
+          ]
+        }
+      },
+      "per_run": {
+        "seed0": {
+          "run_id": "dk-mem-lexicon-llm_seed0",
+          "records_total": 138,
+          "scored_cross_utterance": 138,
+          "ignored": {
+            "unknown_utterance": 0,
+            "cross_episode": 0,
+            "same_utterance": 0
+          },
+          "FCR": {
+            "numerator": 5,
+            "n": 98,
+            "rate": 0.05102040816326531
+          },
+          "MCR": {
+            "numerator": 57,
+            "n": 75,
+            "rate": 0.76
+          },
+          "outcome_breakdown": {
+            "different": {
+              "merged": 5,
+              "compared_not_merged": 77,
+              "not_compared": 0,
+              "no_entry": 16
+            },
+            "same": {
+              "merged": 18,
+              "compared_not_merged": 38,
+              "not_compared": 0,
+              "no_entry": 19
+            }
+          }
+        },
+        "seed1": {
+          "run_id": "dk-mem-lexicon-llm_seed1",
+          "records_total": 138,
+          "scored_cross_utterance": 138,
+          "ignored": {
+            "unknown_utterance": 0,
+            "cross_episode": 0,
+            "same_utterance": 0
+          },
+          "FCR": {
+            "numerator": 5,
+            "n": 98,
+            "rate": 0.05102040816326531
+          },
+          "MCR": {
+            "numerator": 57,
+            "n": 75,
+            "rate": 0.76
+          },
+          "outcome_breakdown": {
+            "different": {
+              "merged": 5,
+              "compared_not_merged": 77,
+              "not_compared": 0,
+              "no_entry": 16
+            },
+            "same": {
+              "merged": 18,
+              "compared_not_merged": 38,
+              "not_compared": 0,
+              "no_entry": 19
+            }
+          }
+        },
+        "seed2": {
+          "run_id": "dk-mem-lexicon-llm_seed2",
+          "records_total": 138,
+          "scored_cross_utterance": 138,
+          "ignored": {
+            "unknown_utterance": 0,
+            "cross_episode": 0,
+            "same_utterance": 0
+          },
+          "FCR": {
+            "numerator": 5,
+            "n": 98,
+            "rate": 0.05102040816326531
+          },
+          "MCR": {
+            "numerator": 57,
+            "n": 75,
+            "rate": 0.76
+          },
+          "outcome_breakdown": {
+            "different": {
+              "merged": 5,
+              "compared_not_merged": 77,
+              "not_compared": 0,
+              "no_entry": 16
+            },
+            "same": {
+              "merged": 18,
+              "compared_not_merged": 38,
+              "not_compared": 0,
+              "no_entry": 19
+            }
+          }
+        }
+      },
+      "coverage": {
+        "episodes_expected": 173,
+        "episodes_comparable": 138,
+        "episodes_not_comparable": 35,
+        "note": "35 episodes (16 gold-different, 19 gold-same) produced no cross-utterance records (no_entry). They count toward denominators as not-merged per contract secs 4-6. Results not fabricated."
+      },
+      "seed_variance_observation": "All three seeds produce identical decisions. SD = 0 exactly. The three submitted run files are deterministically identical in their merge decisions."
+    }
+  },
+  "comparability_note": "dk-mem-lexicon (backbone:null, lexicon-only) vs dk-mem-lexicon-llm (backbone:Qwen/Qwen2.5-3B-Instruct) differ in backbone. Per contract sec 8, backbone:null is exempt from the backbone comparability rule. Document this difference in every table that compares these two strategies.",
+  "per_seed_report_files": {
+    "dk-mem-lexicon_seed0": "data/tier1/teamB_eval_output/dk-mem-lexicon_seed0.json",
+    "dk-mem-lexicon_seed1": "data/tier1/teamB_eval_output/dk-mem-lexicon_seed1.json",
+    "dk-mem-lexicon_seed2": "data/tier1/teamB_eval_output/dk-mem-lexicon_seed2.json",
+    "dk-mem-lexicon-llm_seed0": "data/tier1/teamB_eval_output/dk-mem-lexicon-llm_seed0.json",
+    "dk-mem-lexicon-llm_seed1": "data/tier1/teamB_eval_output/dk-mem-lexicon-llm_seed1.json",
+    "dk-mem-lexicon-llm_seed2": "data/tier1/teamB_eval_output/dk-mem-lexicon-llm_seed2.json"
+  },
+  "multi_seed_report_files": {
+    "dk-mem-lexicon": "data/tier1/teamB_eval_output/dk-mem-lexicon_seeds.json",
+    "dk-mem-lexicon-llm": "data/tier1/teamB_eval_output/dk-mem-lexicon-llm_seeds.json"
+  }
+}

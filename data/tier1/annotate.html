@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tier-1 Annotation</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, sans-serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; }
+  header { display:flex; justify-content:space-between; align-items:baseline; margin-bottom: 1rem; gap: 1rem; flex-wrap: wrap; }
+  h1 { font-size: 1.25rem; margin: 0; }
+  .progress { font-variant-numeric: tabular-nums; color: #666; font-size: 0.95rem; }
+  .meta { display:grid; grid-template-columns: auto 1fr; gap: 0.25rem 0.75rem; margin-bottom:1rem; font-size:0.95rem; }
+  .meta dt { font-weight:600; color:#666; }
+  .meta dd { margin:0; }
+  .utterances { display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .utterance { border:1px solid #ccc; border-radius:8px; padding:0.75rem 1rem; font-size:1.1rem; }
+  .utterance .label { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:#888; margin-bottom:0.25rem; }
+  fieldset { border:1px solid #ddd; border-radius:8px; margin-bottom:1rem; }
+  legend { font-weight:600; padding:0 0.4rem; }
+  .options label { display:inline-flex; align-items:center; gap:0.3rem; margin-right:1.25rem; margin-bottom:0.4rem; }
+  textarea, input[type=text] { width:100%; box-sizing:border-box; font-family:inherit; font-size:0.95rem; padding:0.4rem; border-radius:6px; border:1px solid #ccc; }
+  textarea { min-height: 3em; resize: vertical; }
+  .field { margin-bottom: 0.9rem; }
+  .field label.title { display:block; font-weight:600; margin-bottom:0.25rem; }
+  .field .hint { font-weight:400; color:#888; font-size: 0.85rem; }
+  .nav { display:flex; gap:0.5rem; align-items:center; margin-top:1.5rem; flex-wrap: wrap; }
+  button { font-size:0.95rem; padding:0.5rem 1rem; border-radius:6px; border:1px solid #999; background:#f5f5f5; cursor:pointer; }
+  button:disabled { opacity:0.5; cursor:not-allowed; }
+  button.primary { background:#2563eb; color:white; border-color:#2563eb; }
+  #status { margin-left:auto; font-size:0.9rem; color:#2a2; min-height:1.2em; }
+  #status.error { color:#c33; }
+  .jump { font-size:0.85rem; color:#777; }
+  .jump input { width:4.5em; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tier-1 Annotation — Annotator A</h1>
+  <div class="progress" id="progress">loading…</div>
+</header>
+
+<dl class="meta">
+  <dt>pair_id</dt><dd id="f-pair-id"></dd>
+  <dt>language</dt><dd id="f-language"></dd>
+  <dt>distinction_class</dt><dd id="f-class"></dd>
+</dl>
+
+<div class="utterances">
+  <div class="utterance"><div class="label">Utterance A</div><div id="f-utterance-a"></div></div>
+  <div class="utterance"><div class="label">Utterance B</div><div id="f-utterance-b"></div></div>
+</div>
+
+<form id="form" onsubmit="return false;">
+  <fieldset>
+    <legend>1. grammaticality</legend>
+    <div class="options" id="opt-grammaticality"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>2. minimal_pair</legend>
+    <div class="options" id="opt-minimal_pair"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>3. relation</legend>
+    <div class="options" id="opt-relation"></div>
+  </fieldset>
+
+  <div class="field">
+    <label class="title" for="in-ambiguity-reason">ambiguity_reason <span class="hint">(only if relation = ambiguous)</span></label>
+    <textarea id="in-ambiguity-reason"></textarea>
+  </div>
+  <div class="field">
+    <label class="title" for="in-suggested-fix">suggested_fix <span class="hint">(optional)</span></label>
+    <textarea id="in-suggested-fix"></textarea>
+  </div>
+  <div class="field">
+    <label class="title" for="in-notes">notes <span class="hint">(optional)</span></label>
+    <textarea id="in-notes"></textarea>
+  </div>
+</form>
+
+<div class="nav">
+  <button id="btn-prev" type="button">&larr; Previous</button>
+  <button id="btn-next" type="button">Next &rarr;</button>
+  <button id="btn-save" type="button" class="primary">Save</button>
+  <span class="jump">Go to <input id="in-jump" type="number" min="1" /> / <span id="jump-total"></span></span>
+  <span id="status"></span>
+</div>
+
+<script>
+(async function () {
+  const RADIO_GROUPS = {
+    grammaticality: ['grammatical', 'ungrammatical', 'unnatural_but_grammatical'],
+    minimal_pair: ['yes', 'no'],
+    relation: ['same', 'different', 'ambiguous'],
+  };
+
+  let pairs = [];   // merged, in candidates.jsonl order: [{candidate, annotation}]
+  let index = 0;
+  let dirty = false;
+
+  const el = (id) => document.getElementById(id);
+  const statusEl = el('status');
+
+  function setStatus(msg, isError) {
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('error', !!isError);
+  }
+
+  function buildRadios(containerId, groupName) {
+    const container = el(containerId);
+    container.innerHTML = '';
+    for (const value of RADIO_GROUPS[groupName]) {
+      const label = document.createElement('label');
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = groupName;
+      input.value = value;
+      input.addEventListener('change', () => { dirty = true; });
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(value));
+      container.appendChild(label);
+    }
+  }
+
+  buildRadios('opt-grammaticality', 'grammaticality');
+  buildRadios('opt-minimal_pair', 'minimal_pair');
+  buildRadios('opt-relation', 'relation');
+
+  for (const id of ['in-ambiguity-reason', 'in-suggested-fix', 'in-notes']) {
+    el(id).addEventListener('input', () => { dirty = true; });
+  }
+
+  async function loadState() {
+    const res = await fetch('/api/state');
+    if (!res.ok) throw new Error('failed to load state (' + res.status + ')');
+    const { candidates, annotations } = await res.json();
+    const byId = new Map(annotations.map((a) => [a.pair_id, a]));
+    pairs = candidates.map((c) => ({ candidate: c, annotation: byId.get(c.pair_id) }));
+  }
+
+  function countCompleted() {
+    return pairs.filter((p) => {
+      const a = p.annotation;
+      return a && a.grammaticality !== null && a.minimal_pair !== null && a.relation !== null;
+    }).length;
+  }
+
+  function renderProgress() {
+    el('progress').textContent =
+      'Viewing ' + (index + 1) + '/' + pairs.length +
+      '   —   ' + countCompleted() + '/' + pairs.length + ' completed';
+    el('jump-total').textContent = pairs.length;
+  }
+
+  function render() {
+    const { candidate, annotation } = pairs[index];
+    el('f-pair-id').textContent = candidate.pair_id;
+    el('f-language').textContent = candidate.language;
+    el('f-class').textContent = candidate.distinction_class;
+    el('f-utterance-a').textContent = candidate.utterance_a;
+    el('f-utterance-b').textContent = candidate.utterance_b;
+
+    for (const group of Object.keys(RADIO_GROUPS)) {
+      const inputs = document.getElementsByName(group);
+      for (const input of inputs) input.checked = (annotation[group] === input.value);
+    }
+    el('in-ambiguity-reason').value = annotation.ambiguity_reason || '';
+    el('in-suggested-fix').value = annotation.suggested_fix || '';
+    el('in-notes').value = annotation.notes || '';
+
+    renderProgress();
+    el('btn-prev').disabled = index === 0;
+    el('btn-next').disabled = index === pairs.length - 1;
+    dirty = false;
+    setStatus('');
+  }
+
+  function collectForm() {
+    const out = {};
+    for (const group of Object.keys(RADIO_GROUPS)) {
+      const checked = document.querySelector('input[name="' + group + '"]:checked');
+      out[group] = checked ? checked.value : null;
+    }
+    out.ambiguity_reason = el('in-ambiguity-reason').value.trim() || null;
+    out.suggested_fix = el('in-suggested-fix').value.trim() || null;
+    out.notes = el('in-notes').value.trim() || null;
+    return out;
+  }
+
+  async function save(opts) {
+    opts = opts || {};
+    const current = pairs[index];
+    const payload = Object.assign({ pair_id: current.candidate.pair_id }, collectForm());
+    if (!opts.silent) setStatus('Saving…');
+    try {
+      const res = await fetch('/api/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'save failed');
+      current.annotation = data.record;
+      dirty = false;
+      renderProgress();
+      setStatus(opts.silent ? 'Saved' : ('Saved ' + payload.pair_id));
+      return true;
+    } catch (e) {
+      setStatus('Save failed: ' + e.message, true);
+      return false;
+    }
+  }
+
+  async function goTo(newIndex) {
+    if (newIndex < 0 || newIndex >= pairs.length) return;
+    if (dirty) {
+      const ok = await save({ silent: true });
+      if (!ok) return; // stay put if the autosave failed
+    }
+    index = newIndex;
+    render();
+  }
+
+  el('btn-prev').addEventListener('click', () => goTo(index - 1));
+  el('btn-next').addEventListener('click', () => goTo(index + 1));
+  el('btn-save').addEventListener('click', () => save());
+  el('in-jump').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const n = parseInt(el('in-jump').value, 10);
+      if (n >= 1 && n <= pairs.length) goTo(n - 1);
+    }
+  });
+
+  window.addEventListener('beforeunload', (e) => {
+    if (dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
+
+  try {
+    await loadState();
+    if (pairs.length === 0) throw new Error('no candidates found');
+    render();
+  } catch (e) {
+    setStatus('Failed to load: ' + e.message, true);
+  }
+})();
+</script>
+</body>
+</html>

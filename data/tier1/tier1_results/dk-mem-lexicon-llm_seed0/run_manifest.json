@@ -1,0 +1,8 @@
+{
+  "run_id": "dk-mem-lexicon-llm_seed0",
+  "strategy": "dk-mem-lexicon-llm",
+  "dataset_tier": "tier1_minimal_pairs",
+  "seed": 0,
+  "backbone": "Qwen/Qwen2.5-3B-Instruct",
+  "created_at": "2026-09-30T18:12:06.950761+00:00"
+}

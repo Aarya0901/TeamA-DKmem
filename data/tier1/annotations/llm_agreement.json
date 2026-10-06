@@ -1,0 +1,279 @@
+{
+  "annotator_A": {
+    "file": "data/tier1/annotations/llm_baseline.jsonl",
+    "annotator_id": "llm_baseline",
+    "records": 186
+  },
+  "annotator_B": {
+    "file": "data/tier1/annotations/llm_baseline_B.jsonl",
+    "annotator_id": "llm_baseline_B",
+    "records": 186
+  },
+  "pairs_compared": 186,
+  "pair_ids_only_in_A": [],
+  "pair_ids_only_in_B": [],
+  "method": "Exact agreement = share of pair_ids with identical labels. Cohen's kappa = (p_o - p_e)/(1 - p_e) with p_e from each annotator's marginal label distribution; null labels are treated as their own category. class/language joined from candidates.jsonl (distinction_class, language only); gold_relation not used.",
+  "fields": {
+    "grammaticality": {
+      "n": 186,
+      "agreements": 186,
+      "disagreements": 0,
+      "exact_agreement": 1,
+      "expected_agreement": 1,
+      "cohens_kappa": null,
+      "kappa_note": "undefined: both annotators used a single identical label (p_e = 1)",
+      "label_counts_A": {
+        "grammatical": 186
+      },
+      "label_counts_B": {
+        "grammatical": 186
+      },
+      "confusion_A_rows_B_cols": {
+        "grammatical": {
+          "grammatical": 186
+        }
+      }
+    },
+    "minimal_pair": {
+      "n": 186,
+      "agreements": 186,
+      "disagreements": 0,
+      "exact_agreement": 1,
+      "expected_agreement": 1,
+      "cohens_kappa": null,
+      "kappa_note": "undefined: both annotators used a single identical label (p_e = 1)",
+      "label_counts_A": {
+        "yes": 186
+      },
+      "label_counts_B": {
+        "yes": 186
+      },
+      "confusion_A_rows_B_cols": {
+        "yes": {
+          "yes": 186
+        }
+      }
+    },
+    "relation": {
+      "n": 186,
+      "agreements": 159,
+      "disagreements": 27,
+      "exact_agreement": 0.8548,
+      "expected_agreement": 0.354,
+      "cohens_kappa": 0.7753,
+      "label_counts_A": {
+        "different": 82,
+        "ambiguous": 50,
+        "same": 54
+      },
+      "label_counts_B": {
+        "different": 82,
+        "ambiguous": 23,
+        "same": 81
+      },
+      "confusion_A_rows_B_cols": {
+        "different": {
+          "different": 82
+        },
+        "ambiguous": {
+          "ambiguous": 23,
+          "same": 27
+        },
+        "same": {
+          "same": 54
+        }
+      }
+    }
+  },
+  "relation_disagreements": [
+    {
+      "pair_id": "t1_0138",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0139",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0140",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0141",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0142",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0143",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0144",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0145",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0146",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0147",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0148",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0149",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0150",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0151",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0152",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0153",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0154",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0155",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0156",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0157",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0158",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0159",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0160",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0161",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0162",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0163",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    },
+    {
+      "pair_id": "t1_0164",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "ambiguous",
+      "B": "same"
+    }
+  ]
+}

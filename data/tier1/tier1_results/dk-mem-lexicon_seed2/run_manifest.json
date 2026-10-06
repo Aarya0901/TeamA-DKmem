@@ -1,0 +1,8 @@
+{
+  "run_id": "dk-mem-lexicon_seed2",
+  "strategy": "dk-mem-lexicon",
+  "dataset_tier": "tier1_minimal_pairs",
+  "seed": 2,
+  "backbone": null,
+  "created_at": "2026-09-30T18:04:16.095372+00:00"
+}

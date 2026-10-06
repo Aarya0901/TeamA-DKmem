@@ -1,0 +1,163 @@
+{
+  "scope": "t1_0187..t1_0226 (40 hand-authored candidates only)",
+  "annotator_A": {
+    "file": "data/tier1/annotations/llm_new_A.jsonl",
+    "annotator_id": "llm_new_A",
+    "records": 40
+  },
+  "annotator_B": {
+    "file": "data/tier1/annotations/llm_new_B.jsonl",
+    "annotator_id": "llm_new_B",
+    "records": 40
+  },
+  "label_source": "LLM annotations (two independent fresh-context passes), not human gold",
+  "method": "Exact agreement = share of pair_ids with identical labels. Cohen's kappa = (p_o - p_e)/(1 - p_e), p_e from each annotator's marginals; 'ambiguous' treated as its own category. class/language joined from candidates.jsonl; gold_relation not used (null for these records).",
+  "fields": {
+    "grammaticality": {
+      "n": 40,
+      "agreements": 36,
+      "disagreements": 4,
+      "exact_agreement": 0.9,
+      "expected_agreement": 0.9,
+      "cohens_kappa": 0,
+      "label_counts_A": {
+        "grammatical": 40
+      },
+      "label_counts_B": {
+        "grammatical": 36,
+        "unnatural_but_grammatical": 4
+      },
+      "confusion_A_rows_B_cols": {
+        "grammatical": {
+          "grammatical": 36,
+          "unnatural_but_grammatical": 4
+        }
+      }
+    },
+    "minimal_pair": {
+      "n": 40,
+      "agreements": 40,
+      "disagreements": 0,
+      "exact_agreement": 1,
+      "expected_agreement": 1,
+      "cohens_kappa": null,
+      "kappa_note": "undefined: both annotators used a single identical label (p_e = 1)",
+      "label_counts_A": {
+        "yes": 40
+      },
+      "label_counts_B": {
+        "yes": 40
+      },
+      "confusion_A_rows_B_cols": {
+        "yes": {
+          "yes": 40
+        }
+      }
+    },
+    "relation": {
+      "n": 40,
+      "agreements": 37,
+      "disagreements": 3,
+      "exact_agreement": 0.925,
+      "expected_agreement": 0.445,
+      "cohens_kappa": 0.8649,
+      "label_counts_A": {
+        "same": 21,
+        "ambiguous": 1,
+        "different": 18
+      },
+      "label_counts_B": {
+        "same": 20,
+        "ambiguous": 4,
+        "different": 16
+      },
+      "confusion_A_rows_B_cols": {
+        "same": {
+          "same": 20,
+          "ambiguous": 1
+        },
+        "ambiguous": {
+          "ambiguous": 1
+        },
+        "different": {
+          "ambiguous": 2,
+          "different": 16
+        }
+      }
+    }
+  },
+  "relation_by_language": {
+    "hi": {
+      "n": 20,
+      "agreements": 20,
+      "exact_agreement": 1,
+      "cohens_kappa": 1
+    },
+    "de": {
+      "n": 8,
+      "agreements": 6,
+      "exact_agreement": 0.75,
+      "cohens_kappa": 0
+    },
+    "ko": {
+      "n": 12,
+      "agreements": 11,
+      "exact_agreement": 0.9167,
+      "cohens_kappa": 0.8333
+    }
+  },
+  "relation_by_language_note": "Per-language n is 8-16, below the ~20 items per cell the protocol suggests for a meaningful kappa; indicative only.",
+  "relation_disagreements": [
+    {
+      "pair_id": "t1_0195",
+      "class": "honorific_register",
+      "language": "de",
+      "A": "different",
+      "B": "ambiguous"
+    },
+    {
+      "pair_id": "t1_0199",
+      "class": "honorific_register",
+      "language": "de",
+      "A": "different",
+      "B": "ambiguous"
+    },
+    {
+      "pair_id": "t1_0212",
+      "class": "politeness_relationship",
+      "language": "ko",
+      "A": "same",
+      "B": "ambiguous"
+    }
+  ],
+  "grammaticality_disagreements": [
+    {
+      "pair_id": "t1_0198",
+      "class": "honorific_register",
+      "language": "de",
+      "A": "grammatical",
+      "B": "unnatural_but_grammatical"
+    },
+    {
+      "pair_id": "t1_0222",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "grammatical",
+      "B": "unnatural_but_grammatical"
+    },
+    {
+      "pair_id": "t1_0224",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "grammatical",
+      "B": "unnatural_but_grammatical"
+    },
+    {
+      "pair_id": "t1_0226",
+      "class": "politeness_relationship",
+      "language": "hi",
+      "A": "grammatical",
+      "B": "unnatural_but_grammatical"
+    }
+  ]
+}

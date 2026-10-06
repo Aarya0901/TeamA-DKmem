@@ -1,0 +1,2250 @@
+{
+  "label": "Tier 1 v2, LLM-annotated, provisional",
+  "mode": "multi_seed",
+  "sd_method": "sample standard deviation (n - 1) of per-seed rates; pair-level counts are not pooled across seeds",
+  "strategy": "dk-mem-lexicon",
+  "backbone": null,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "overall": {
+    "n_gold_pairs": 173,
+    "indicative": false,
+    "FCR": {
+      "mean": 0.1326530612244898,
+      "sd": 0,
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "numerator": 13,
+          "n": 98,
+          "rate": 0.1326530612244898
+        },
+        {
+          "seed": 1,
+          "numerator": 13,
+          "n": 98,
+          "rate": 0.1326530612244898
+        },
+        {
+          "seed": 2,
+          "numerator": 13,
+          "n": 98,
+          "rate": 0.1326530612244898
+        }
+      ]
+    },
+    "MCR": {
+      "mean": 0.8133333333333334,
+      "sd": 0,
+      "n_seeds": 3,
+      "per_seed": [
+        {
+          "seed": 0,
+          "numerator": 61,
+          "n": 75,
+          "rate": 0.8133333333333334
+        },
+        {
+          "seed": 1,
+          "numerator": 61,
+          "n": 75,
+          "rate": 0.8133333333333334
+        },
+        {
+          "seed": 2,
+          "numerator": 61,
+          "n": 75,
+          "rate": 0.8133333333333334
+        }
+      ]
+    }
+  },
+  "by_class": {
+    "classifier_measure": {
+      "n_gold_pairs": 24,
+      "indicative": false,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    },
+    "evidentiality": {
+      "n_gold_pairs": 34,
+      "indicative": false,
+      "FCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 34,
+            "n": 34,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 34,
+            "n": 34,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 34,
+            "n": 34,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    "honorific_register": {
+      "n_gold_pairs": 13,
+      "indicative": true,
+      "FCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 0.7142857142857143,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          },
+          {
+            "seed": 1,
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          },
+          {
+            "seed": 2,
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        ]
+      }
+    },
+    "kinship": {
+      "n_gold_pairs": 32,
+      "indicative": false,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    },
+    "name_variant": {
+      "n_gold_pairs": 24,
+      "indicative": false,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    "politeness_relationship": {
+      "n_gold_pairs": 24,
+      "indicative": false,
+      "FCR": {
+        "mean": 0.10000000000000002,
+        "sd": 1.6996749443881478e-17,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 1,
+            "n": 10,
+            "rate": 0.1
+          },
+          {
+            "seed": 1,
+            "numerator": 1,
+            "n": 10,
+            "rate": 0.1
+          },
+          {
+            "seed": 2,
+            "numerator": 1,
+            "n": 10,
+            "rate": 0.1
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 0.14285714285714285,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 2,
+            "n": 14,
+            "rate": 0.14285714285714285
+          },
+          {
+            "seed": 1,
+            "numerator": 2,
+            "n": 14,
+            "rate": 0.14285714285714285
+          },
+          {
+            "seed": 2,
+            "numerator": 2,
+            "n": 14,
+            "rate": 0.14285714285714285
+          }
+        ]
+      }
+    },
+    "spatial_temporal_deixis": {
+      "n_gold_pairs": 22,
+      "indicative": false,
+      "FCR": {
+        "mean": 0.2727272727272727,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          {
+            "seed": 1,
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          {
+            "seed": 2,
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    }
+  },
+  "by_language": {
+    "de": {
+      "n_gold_pairs": 6,
+      "indicative": true,
+      "FCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    },
+    "hi": {
+      "n_gold_pairs": 145,
+      "indicative": false,
+      "FCR": {
+        "mean": 0.07954545454545454,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 7,
+            "n": 88,
+            "rate": 0.07954545454545454
+          },
+          {
+            "seed": 1,
+            "numerator": 7,
+            "n": 88,
+            "rate": 0.07954545454545454
+          },
+          {
+            "seed": 2,
+            "numerator": 7,
+            "n": 88,
+            "rate": 0.07954545454545454
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 0.8596491228070176,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 49,
+            "n": 57,
+            "rate": 0.8596491228070176
+          },
+          {
+            "seed": 1,
+            "numerator": 49,
+            "n": 57,
+            "rate": 0.8596491228070176
+          },
+          {
+            "seed": 2,
+            "numerator": 49,
+            "n": 57,
+            "rate": 0.8596491228070176
+          }
+        ]
+      }
+    },
+    "ko": {
+      "n_gold_pairs": 12,
+      "indicative": true,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 0.25,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          },
+          {
+            "seed": 1,
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          },
+          {
+            "seed": 2,
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        ]
+      }
+    },
+    "tr": {
+      "n_gold_pairs": 10,
+      "indicative": true,
+      "FCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        ]
+      }
+    }
+  },
+  "by_class_language": {
+    "classifier_measure x hi": {
+      "n_gold_pairs": 24,
+      "indicative": false,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    },
+    "evidentiality x hi": {
+      "n_gold_pairs": 24,
+      "indicative": false,
+      "FCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 24,
+            "n": 24,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 24,
+            "n": 24,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 24,
+            "n": 24,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    "evidentiality x tr": {
+      "n_gold_pairs": 10,
+      "indicative": true,
+      "FCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    "honorific_register x de": {
+      "n_gold_pairs": 6,
+      "indicative": true,
+      "FCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    },
+    "honorific_register x hi": {
+      "n_gold_pairs": 7,
+      "indicative": true,
+      "FCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 0.7142857142857143,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          },
+          {
+            "seed": 1,
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          },
+          {
+            "seed": 2,
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        ]
+      }
+    },
+    "kinship x hi": {
+      "n_gold_pairs": 32,
+      "indicative": false,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    },
+    "name_variant x hi": {
+      "n_gold_pairs": 24,
+      "indicative": false,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 1,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          },
+          {
+            "seed": 1,
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          },
+          {
+            "seed": 2,
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        ]
+      }
+    },
+    "politeness_relationship x hi": {
+      "n_gold_pairs": 12,
+      "indicative": true,
+      "FCR": {
+        "mean": 0.16666666666666666,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 1,
+            "n": 6,
+            "rate": 0.16666666666666666
+          },
+          {
+            "seed": 1,
+            "numerator": 1,
+            "n": 6,
+            "rate": 0.16666666666666666
+          },
+          {
+            "seed": 2,
+            "numerator": 1,
+            "n": 6,
+            "rate": 0.16666666666666666
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 6,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 6,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 6,
+            "rate": 0
+          }
+        ]
+      }
+    },
+    "politeness_relationship x ko": {
+      "n_gold_pairs": 12,
+      "indicative": true,
+      "FCR": {
+        "mean": 0,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          }
+        ]
+      },
+      "MCR": {
+        "mean": 0.25,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          },
+          {
+            "seed": 1,
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          },
+          {
+            "seed": 2,
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        ]
+      }
+    },
+    "spatial_temporal_deixis x hi": {
+      "n_gold_pairs": 22,
+      "indicative": false,
+      "FCR": {
+        "mean": 0.2727272727272727,
+        "sd": 0,
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          {
+            "seed": 1,
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          {
+            "seed": 2,
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          }
+        ]
+      },
+      "MCR": {
+        "mean": "n/a",
+        "sd": "n/a",
+        "n_seeds": 3,
+        "per_seed": [
+          {
+            "seed": 0,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 1,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          {
+            "seed": 2,
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        ]
+      }
+    }
+  },
+  "per_seed": [
+    {
+      "label": "Tier 1 v2, LLM-annotated, provisional",
+      "run": {
+        "run_id": "dk-mem-lexicon_seed0",
+        "strategy": "dk-mem-lexicon",
+        "backbone": null,
+        "seed": 0
+      },
+      "records": {
+        "total": 173,
+        "scored_cross_utterance": 173,
+        "ignored": {
+          "unknown_utterance": 0,
+          "cross_episode": 0,
+          "same_utterance": 0
+        }
+      },
+      "overall": {
+        "n_gold_pairs": 173,
+        "indicative": false,
+        "FCR": {
+          "numerator": 13,
+          "n": 98,
+          "rate": 0.1326530612244898
+        },
+        "MCR": {
+          "numerator": 61,
+          "n": 75,
+          "rate": 0.8133333333333334
+        }
+      },
+      "by_class": {
+        "classifier_measure": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "evidentiality": {
+          "n_gold_pairs": 34,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 34,
+            "n": 34,
+            "rate": 1
+          }
+        },
+        "honorific_register": {
+          "n_gold_pairs": 13,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        },
+        "kinship": {
+          "n_gold_pairs": 32,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "name_variant": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        },
+        "politeness_relationship": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 1,
+            "n": 10,
+            "rate": 0.1
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 14,
+            "rate": 0.14285714285714285
+          }
+        },
+        "spatial_temporal_deixis": {
+          "n_gold_pairs": 22,
+          "indicative": false,
+          "FCR": {
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        }
+      },
+      "by_language": {
+        "de": {
+          "n_gold_pairs": 6,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "hi": {
+          "n_gold_pairs": 145,
+          "indicative": false,
+          "FCR": {
+            "numerator": 7,
+            "n": 88,
+            "rate": 0.07954545454545454
+          },
+          "MCR": {
+            "numerator": 49,
+            "n": 57,
+            "rate": 0.8596491228070176
+          }
+        },
+        "ko": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        },
+        "tr": {
+          "n_gold_pairs": 10,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        }
+      },
+      "by_class_language": {
+        "classifier_measure x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "evidentiality x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 24,
+            "n": 24,
+            "rate": 1
+          }
+        },
+        "evidentiality x tr": {
+          "n_gold_pairs": 10,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        },
+        "honorific_register x de": {
+          "n_gold_pairs": 6,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "honorific_register x hi": {
+          "n_gold_pairs": 7,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        },
+        "kinship x hi": {
+          "n_gold_pairs": 32,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "name_variant x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        },
+        "politeness_relationship x hi": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 1,
+            "n": 6,
+            "rate": 0.16666666666666666
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 6,
+            "rate": 0
+          }
+        },
+        "politeness_relationship x ko": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        },
+        "spatial_temporal_deixis x hi": {
+          "n_gold_pairs": 22,
+          "indicative": false,
+          "FCR": {
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        }
+      },
+      "outcome_breakdown": {
+        "different": {
+          "merged": 13,
+          "compared_not_merged": 85,
+          "not_compared": 0,
+          "no_entry": 0
+        },
+        "same": {
+          "merged": 14,
+          "compared_not_merged": 61,
+          "not_compared": 0,
+          "no_entry": 0
+        }
+      },
+      "indicative_threshold_n": 20
+    },
+    {
+      "label": "Tier 1 v2, LLM-annotated, provisional",
+      "run": {
+        "run_id": "dk-mem-lexicon_seed1",
+        "strategy": "dk-mem-lexicon",
+        "backbone": null,
+        "seed": 1
+      },
+      "records": {
+        "total": 173,
+        "scored_cross_utterance": 173,
+        "ignored": {
+          "unknown_utterance": 0,
+          "cross_episode": 0,
+          "same_utterance": 0
+        }
+      },
+      "overall": {
+        "n_gold_pairs": 173,
+        "indicative": false,
+        "FCR": {
+          "numerator": 13,
+          "n": 98,
+          "rate": 0.1326530612244898
+        },
+        "MCR": {
+          "numerator": 61,
+          "n": 75,
+          "rate": 0.8133333333333334
+        }
+      },
+      "by_class": {
+        "classifier_measure": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "evidentiality": {
+          "n_gold_pairs": 34,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 34,
+            "n": 34,
+            "rate": 1
+          }
+        },
+        "honorific_register": {
+          "n_gold_pairs": 13,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        },
+        "kinship": {
+          "n_gold_pairs": 32,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "name_variant": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        },
+        "politeness_relationship": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 1,
+            "n": 10,
+            "rate": 0.1
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 14,
+            "rate": 0.14285714285714285
+          }
+        },
+        "spatial_temporal_deixis": {
+          "n_gold_pairs": 22,
+          "indicative": false,
+          "FCR": {
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        }
+      },
+      "by_language": {
+        "de": {
+          "n_gold_pairs": 6,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "hi": {
+          "n_gold_pairs": 145,
+          "indicative": false,
+          "FCR": {
+            "numerator": 7,
+            "n": 88,
+            "rate": 0.07954545454545454
+          },
+          "MCR": {
+            "numerator": 49,
+            "n": 57,
+            "rate": 0.8596491228070176
+          }
+        },
+        "ko": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        },
+        "tr": {
+          "n_gold_pairs": 10,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        }
+      },
+      "by_class_language": {
+        "classifier_measure x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "evidentiality x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 24,
+            "n": 24,
+            "rate": 1
+          }
+        },
+        "evidentiality x tr": {
+          "n_gold_pairs": 10,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        },
+        "honorific_register x de": {
+          "n_gold_pairs": 6,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "honorific_register x hi": {
+          "n_gold_pairs": 7,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        },
+        "kinship x hi": {
+          "n_gold_pairs": 32,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "name_variant x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        },
+        "politeness_relationship x hi": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 1,
+            "n": 6,
+            "rate": 0.16666666666666666
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 6,
+            "rate": 0
+          }
+        },
+        "politeness_relationship x ko": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        },
+        "spatial_temporal_deixis x hi": {
+          "n_gold_pairs": 22,
+          "indicative": false,
+          "FCR": {
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        }
+      },
+      "outcome_breakdown": {
+        "different": {
+          "merged": 13,
+          "compared_not_merged": 85,
+          "not_compared": 0,
+          "no_entry": 0
+        },
+        "same": {
+          "merged": 14,
+          "compared_not_merged": 61,
+          "not_compared": 0,
+          "no_entry": 0
+        }
+      },
+      "indicative_threshold_n": 20
+    },
+    {
+      "label": "Tier 1 v2, LLM-annotated, provisional",
+      "run": {
+        "run_id": "dk-mem-lexicon_seed2",
+        "strategy": "dk-mem-lexicon",
+        "backbone": null,
+        "seed": 2
+      },
+      "records": {
+        "total": 173,
+        "scored_cross_utterance": 173,
+        "ignored": {
+          "unknown_utterance": 0,
+          "cross_episode": 0,
+          "same_utterance": 0
+        }
+      },
+      "overall": {
+        "n_gold_pairs": 173,
+        "indicative": false,
+        "FCR": {
+          "numerator": 13,
+          "n": 98,
+          "rate": 0.1326530612244898
+        },
+        "MCR": {
+          "numerator": 61,
+          "n": 75,
+          "rate": 0.8133333333333334
+        }
+      },
+      "by_class": {
+        "classifier_measure": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "evidentiality": {
+          "n_gold_pairs": 34,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 34,
+            "n": 34,
+            "rate": 1
+          }
+        },
+        "honorific_register": {
+          "n_gold_pairs": 13,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        },
+        "kinship": {
+          "n_gold_pairs": 32,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "name_variant": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        },
+        "politeness_relationship": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 1,
+            "n": 10,
+            "rate": 0.1
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 14,
+            "rate": 0.14285714285714285
+          }
+        },
+        "spatial_temporal_deixis": {
+          "n_gold_pairs": 22,
+          "indicative": false,
+          "FCR": {
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        }
+      },
+      "by_language": {
+        "de": {
+          "n_gold_pairs": 6,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "hi": {
+          "n_gold_pairs": 145,
+          "indicative": false,
+          "FCR": {
+            "numerator": 7,
+            "n": 88,
+            "rate": 0.07954545454545454
+          },
+          "MCR": {
+            "numerator": 49,
+            "n": 57,
+            "rate": 0.8596491228070176
+          }
+        },
+        "ko": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        },
+        "tr": {
+          "n_gold_pairs": 10,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        }
+      },
+      "by_class_language": {
+        "classifier_measure x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 24,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "evidentiality x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 24,
+            "n": 24,
+            "rate": 1
+          }
+        },
+        "evidentiality x tr": {
+          "n_gold_pairs": 10,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 10,
+            "n": 10,
+            "rate": 1
+          }
+        },
+        "honorific_register x de": {
+          "n_gold_pairs": 6,
+          "indicative": true,
+          "FCR": {
+            "numerator": 6,
+            "n": 6,
+            "rate": 1
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "honorific_register x hi": {
+          "n_gold_pairs": 7,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          },
+          "MCR": {
+            "numerator": 5,
+            "n": 7,
+            "rate": 0.7142857142857143
+          }
+        },
+        "kinship x hi": {
+          "n_gold_pairs": 32,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 32,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        },
+        "name_variant x hi": {
+          "n_gold_pairs": 24,
+          "indicative": false,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 20,
+            "n": 20,
+            "rate": 1
+          }
+        },
+        "politeness_relationship x hi": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 1,
+            "n": 6,
+            "rate": 0.16666666666666666
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 6,
+            "rate": 0
+          }
+        },
+        "politeness_relationship x ko": {
+          "n_gold_pairs": 12,
+          "indicative": true,
+          "FCR": {
+            "numerator": 0,
+            "n": 4,
+            "rate": 0
+          },
+          "MCR": {
+            "numerator": 2,
+            "n": 8,
+            "rate": 0.25
+          }
+        },
+        "spatial_temporal_deixis x hi": {
+          "n_gold_pairs": 22,
+          "indicative": false,
+          "FCR": {
+            "numerator": 6,
+            "n": 22,
+            "rate": 0.2727272727272727
+          },
+          "MCR": {
+            "numerator": 0,
+            "n": 0,
+            "rate": "n/a"
+          }
+        }
+      },
+      "outcome_breakdown": {
+        "different": {
+          "merged": 13,
+          "compared_not_merged": 85,
+          "not_compared": 0,
+          "no_entry": 0
+        },
+        "same": {
+          "merged": 14,
+          "compared_not_merged": 61,
+          "not_compared": 0,
+          "no_entry": 0
+        }
+      },
+      "indicative_threshold_n": 20
+    }
+  ],
+  "indicative_threshold_n": 20
+}
